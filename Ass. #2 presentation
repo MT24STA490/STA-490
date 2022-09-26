@@ -1,0 +1,50 @@
+---
+title: 'Office Worker Ratings for Superiors'
+author: 'Mikaela Taylor'
+date: 'September 25, 2022'
+institute: 'West Chester University of Pennsylvania'
+image: <center><img src="wcu-logo.png" alt="wcupa-logo" width="120" height="80"></center> 
+output:
+  powerpoint_presentation: default
+---
+#<center>The Purpose</center>
+•	Discover the ratings of satisfaction for office workers with their superiors 
+---
+#<center>The Data</center>
+•	Index
+•	6 variables
+o	Measuring 6 additional different variables that were suspected to have an influence over the ratings
+•	The satisfaction rating
+---
+#<center>Table</center>
+```{r cars, echo = FALSE}
+x24 = read.table("https://people.sc.fsu.edu/~jburkardt/datasets/regression/x24.txt", skip = 45)
+
+names(x24) = c("Index", "A1", "A2", "A3", "A4", "A5", "A6", "B")
+
+```
+
+```{r pressure}
+knitr::kable(x24, format = 'html', align = "cccccccc", caption = "Office Worker's Ratings of their Superiors", vline = "|")
+```
+---
+#<center>Equation</center>
+•	B = A0 * X0 + A1 * X1 + A2 * X2 + A3 * X3 + A4 * X4 + A5 * X5 + A6 * X6
+o	Multiple Linear regression
+o	Variables 1 – 6
+	X0, X1, X2, X3, X4, X5, X6
+o	Regression Coefficients
+	A0, A1, A2, A3, A4, A5, A6
+---
+#<center>The Output</center>
+```{r}
+par(mar = c(4, 4, 1, .1))
+plot(x24, pch = 19, col = 'purple', las = 1)
+abline(x24, lwd = 2)
+```
+---
+#<center>Conclusion</center>
+•The plot reinforces the linear relationship between the ratings of the 6 variables and the satisfaction ratings of the superiors
+•This could be helpful for the superiors if they are trying to increase the satisfaction ratings
+
+
